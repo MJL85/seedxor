@@ -116,9 +116,9 @@ The algorthim XOR's the seed hexidecimal with a chosen pass phrase. If the pass 
 
 #### Example
 
-Data = `deafbeef`
-Pass = `ab`
-Result = `bfcfdf8d`
+Data = `deafbeef`  
+Pass = `ab`  
+Result = `bfcfdf8d`  
 ```
                  de ad be ef
              xor  a  b  a  b
@@ -126,9 +126,9 @@ Result = `bfcfdf8d`
                  bf cf df 8d
 ```
 
-Data = `deadbeef`
-Pass = `abcdef`
-Result = `daa9bce9`
+Data = `deadbeef`  
+Pass = `abcdef`  
+Result = `daa9bce9`  
 ``` 
                  de ad be ef
              xor  a  b  c  d
