@@ -109,3 +109,30 @@ $ seedtool-cli --in=hex --out=bip39
 edf338976451291385663d3e720b208f
 unknown oil chair silly barely mean better sibling dinosaur motion sight cabin
 ```
+
+### Details
+
+The algorthim XOR's the seed hexidecimal with a chosen pass phrase. If the pass phrase is shorter than the hexidecimal it is encoding, it will be used continuously to cover the entire input data. If the pass phrase is longer than the hexidecimal it is encoding, the output will be encoded again with the remainder of the pass phrase such that the entire pass phase is used.
+
+#### Example
+
+Data = `deafbeef`
+Pass = `ab`
+Result = `bfcfdf8d`
+```
+                 de ad be ef
+             xor  a  b  a  b
+             ---------------
+                 bf cf df 8d
+```
+
+Data = `deadbeef`
+Pass = `abcdef`
+Result = `daa9bce9`
+``` 
+                 de ad be ef
+             xor  a  b  c  d
+             xor  e  f  a  b
+             ---------------
+                 da a9 bc e9 
+```
